@@ -1,1 +1,6 @@
-../common/os_pickup_qssi.bp
+soong_namespace {
+    imports: [
+        "vendor/qcom/opensource/commonsys-intf/display",
+        "vendor/qcom/opensource/display",
+    ],
+}
