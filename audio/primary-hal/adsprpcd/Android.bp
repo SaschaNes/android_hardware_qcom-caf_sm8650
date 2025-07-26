@@ -1,0 +1,29 @@
+cc_binary {
+    name: "audioadsprpcd",
+
+    srcs: ["adsprpcd.c"],
+
+    shared_libs: [
+        "liblog",
+        "libdl",
+        "libcutils",
+    ],
+
+    required: ["vendor.qti.audio-adsprpc-service.rc"],
+
+    vendor: true,
+
+    owner: "qti",
+
+    sanitize: {
+        integer_overflow: true,
+    },
+}
+
+prebuilt_etc {
+    name: "vendor.qti.audio-adsprpc-service.rc",
+    src: "vendor.qti.audio-adsprpc-service.rc",
+    filename_from_src: true,
+    sub_dir: "init",
+    vendor: true,
+}
